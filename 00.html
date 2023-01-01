@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3d-css </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="file:///C:/Users/PC/OneDrive/Desktop/%C2%A0/learn/weB/Html%20A/New%20folder/main.css">
+    <script src="file:///C:/Users/PC/OneDrive/Desktop/%C2%A0/learn/weB/Html%20A/New%20folder/main.js"></script>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  animation: animateColor 8s linear infinite;
+  
+  user-select: none;
+}
+@keyframes animateColor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3842d16e;
+  overflow: hidden;
+  
+}
+.steps {
+  position: relative;
+  transform: skewY(-15deg) translateX(50px) translateY(50px);
+  cursor:none;
+
+}
+
+
+
+.steps::before {
+  content: ' ';
+  position: absolute;
+  top: 100px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -100;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  filter: blur(25px);
+  cursor:default;
+}
+
+.steps span {
+  position: relative;
+  width:150px;
+  height: 40px;
+  display: block;
+  background: #423f3f;
+  transition: 0.5s;
+  z-index: var(--i);
+  color: rgb(226, 171, 171);
+  animation: animateSteps 02.0s ease-in-out infinite;
+  animation-delay: calc(-1s* var(--i));
+}
+
+@keyframes animateSteps {
+  0%,100% {
+    /* transform: translateX(-40px); */
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateX(100px);
+    
+  }
+}
+
+.steps span:hover {
+  background: #33a3ee;
+  transition: 0.1s;
+}
+
+.steps span::before {
+  content: '--------------------------------------------------------';
+  color: rgb(196, 94, 94);
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: #343535;
+  transform: skewY(45deg);
+  transform-origin: right;
+  transition: 0.5s;
+}
+
+.steps span:hover::before {
+  background: #1f5378;
+  transition: 0.5s;  
+  color: rgb(134, 130, 130);
+}
+
+.steps span::after {
+  content: '------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+  color: rgb(167, 141, 141);
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #f00;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  background: #35383e;
+  transition: 0.5s;
+}
+
+.steps span:hover::after {
+  background: #63b5e7;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="steps">
+          <span style="--i:7">--------------------------------------------------------</span>
+          <span style="--i:6">--------------------------------------------------------</span>
+          <span style="--i:5">--------------------------------------------------------</span>
+          <span style="--i:4">--------------------------------------------------------</span>
+          <span style="--i:3">--------------------------------------------------------</span>
+          <span style="--i:2">--------------------------------------------------------</span>
+          <span style="--i:1">--------------------------------------------------------</span>
+        </div>
+      </div> 
+
+
+
+
+
+
+
+
+
+
+
+      
+</body></html>
